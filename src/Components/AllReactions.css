@@ -1,0 +1,35 @@
+.allreactions-menu{
+    width: 950px;
+    height: 300px;
+    align-items: center;
+}
+
+.allreactions-menu2{
+    margin: 80px auto;
+    align-items: center;
+}
+
+.allreactions-menu-title{
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    white-space: pre-line;
+}
+
+.table-src{
+    justify-content: center;
+    flex-grow: 6;  
+}
+
+.all-reactions-container{
+    display: flex; 
+    flex-direction: row ;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.allreactions-options{
+    margin-top: 1.5rem;
+    margin-left: -14rem;
+    flex-grow: 1;
+}

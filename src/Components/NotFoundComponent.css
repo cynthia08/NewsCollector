@@ -1,0 +1,15 @@
+.not-found-main{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+
+}
+
+
+
+.text-not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
