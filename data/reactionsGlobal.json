@@ -1,0 +1,152 @@
+{
+    "reactions" : {
+        "likes":  [
+            [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],  
+           [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ] , 
+            [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "nytimes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ]
+        ] ,
+        "retweets": [
+            [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],  
+           [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ] , 
+            [
+                {
+                    "source_author" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_author" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ] 
+        ] 
+    }
+}
