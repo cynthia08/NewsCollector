@@ -2,48 +2,32 @@
     "reactions" : {
         "likes": [
             {
-                "source_author" : "BBCWorld",  
-                "amount": 3, 
-                "date" : "2021-01-10T22:42:09Z"              
+                "source_author" : "Sample",  
+                "amount": 0
             },
             {
-                "source_author" : "Forbes",  
-                "amount": 2, 
-                "date" : "2021-01-10T22:42:09Z"              
+                "source_author" : "Sample",  
+                "amount": 0
             },
             {
-                "source_author" : "CNN",  
-                "amount": 1, 
-                "date" : "2021-01-10T22:42:09Z"              
-            },
-            {
-                "source_author" : "Milenio",  
-                "amount": 3, 
-                "date" : "2021-01-10T22:42:09Z"              
-            },
-            {
-                "source_author" : "ElUniversal",  
-                "amount": 3, 
-                "date" : "2021-01-10T22:42:09Z"              
+                "source_author" : "Sample",  
+                "amount": 0
             }
         ],
         "retweets":[
             {
-                "source_author" : "CNN",  
-                "amount": 2, 
-                "date" : "2021-01-10T22:42:09Z"              
+                "source_author" : "Sample",  
+                "amount": 0
+                    
             },
             {
-                "source_author" : "Forbes",  
-                "amount": 2, 
-                "date" : "2021-01-10T22:42:09Z"              
+                "source_author" : "Sample",  
+                "amount": 0
             },
             {
-                "source_author" : "nytimes",  
-                "amount": 1, 
-                "date" : "2021-01-10T22:42:09Z"              
-            }
-                
+                "source_author" : "Sample",  
+                "amount": 0
+            }    
         ]
     }
 }
