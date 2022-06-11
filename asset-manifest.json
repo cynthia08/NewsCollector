@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/NewsCollector/static/css/main.10726e70.chunk.css",
+    "main.css": "/NewsCollector/static/css/main.b1cc0231.chunk.css",
     "main.js": "/NewsCollector/static/js/main.4721bc31.chunk.js",
     "main.js.map": "/NewsCollector/static/js/main.4721bc31.chunk.js.map",
     "runtime-main.js": "/NewsCollector/static/js/runtime-main.c5c5206b.js",
@@ -10,7 +10,7 @@
     "static/js/2.4b69e501.chunk.js.map": "/NewsCollector/static/js/2.4b69e501.chunk.js.map",
     "index.html": "/NewsCollector/index.html",
     "static/css/2.ed1298f3.chunk.css.map": "/NewsCollector/static/css/2.ed1298f3.chunk.css.map",
-    "static/css/main.10726e70.chunk.css.map": "/NewsCollector/static/css/main.10726e70.chunk.css.map",
+    "static/css/main.b1cc0231.chunk.css.map": "/NewsCollector/static/css/main.b1cc0231.chunk.css.map",
     "static/js/2.4b69e501.chunk.js.LICENSE.txt": "/NewsCollector/static/js/2.4b69e501.chunk.js.LICENSE.txt",
     "static/media/extension.011eb035.png": "/NewsCollector/static/media/extension.011eb035.png",
     "static/media/home-background_3.210fcbc2.png": "/NewsCollector/static/media/home-background_3.210fcbc2.png",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.c5c5206b.js",
     "static/css/2.ed1298f3.chunk.css",
     "static/js/2.4b69e501.chunk.js",
-    "static/css/main.10726e70.chunk.css",
+    "static/css/main.b1cc0231.chunk.css",
     "static/js/main.4721bc31.chunk.js"
   ]
 }
