@@ -2,30 +2,30 @@
     "reactions" : {
         "likes": [
             {
-                "source_author" : "Sample",  
+                "source_author" : "Sample1",  
                 "amount": 0
             },
             {
-                "source_author" : "Sample",  
+                "source_author" : "Sample2",  
                 "amount": 0
             },
             {
-                "source_author" : "Sample",  
+                "source_author" : "Sample3",  
                 "amount": 0
             }
         ],
         "retweets":[
             {
-                "source_author" : "Sample",  
+                "source_author" : "Sample1",  
                 "amount": 0
                     
             },
             {
-                "source_author" : "Sample",  
+                "source_author" : "Sample2",  
                 "amount": 0
             },
             {
-                "source_author" : "Sample",  
+                "source_author" : "Sample3",  
                 "amount": 0
             }    
         ]
