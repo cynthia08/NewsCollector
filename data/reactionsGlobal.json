@@ -3,78 +3,78 @@
         "likes":  [
             [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 10, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Forbes",  
+                    "source_username" : "Forbes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "CNN",  
+                    "source_username" : "CNN",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Milenio",  
+                    "source_username" : "Milenio",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ],  
            [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Forbes",  
+                    "source_username" : "Forbes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "CNN",  
+                    "source_username" : "CNN",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Milenio",  
+                    "source_username" : "Milenio",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ] , 
             [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Forbes",  
+                    "source_username" : "Forbes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "CNN",  
+                    "source_username" : "CNN",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Milenio",  
+                    "source_username" : "Milenio",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ],
             [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "nytimes",  
+                    "source_username" : "nytimes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
@@ -83,66 +83,66 @@
         "retweets": [
             [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Forbes",  
+                    "source_username" : "Forbes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "CNN",  
+                    "source_username" : "CNN",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Milenio",  
+                    "source_username" : "Milenio",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ],  
            [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Forbes",  
+                    "source_username" : "Forbes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "CNN",  
+                    "source_username" : "CNN",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Milenio",  
+                    "source_username" : "Milenio",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ] , 
             [
                 {
-                    "source_author" : "BBCWorld",  
+                    "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Forbes",  
+                    "source_username" : "Forbes",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "CNN",  
+                    "source_username" : "CNN",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_author" : "Milenio",  
+                    "source_username" : "Milenio",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }

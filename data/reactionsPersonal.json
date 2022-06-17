@@ -2,33 +2,20 @@
     "reactions" : {
         "retweets": [
             {
-                "source_author" : "Sample1",  
-                "amount": 0
+                "source_username" : "TheEconomist",  
+                "amount": 1
             },
             {
-                "source_author" : "Sample2",  
-                "amount": 0
-            },
-            {
-                "source_author" : "Sample3",  
-                "amount": 0
+                "source_username" : "washingtonpost",  
+                "amount": 3
             }
             
         ],
         "likes":[
             {
-                "source_author" : "Sample1",  
-                "amount": 0
-                    
-            },
-            {
-                "source_author" : "Sample2",  
-                "amount": 0
-            },
-            {
-                "source_author" : "Sample3",  
-                "amount": 0
-            }     
+                "source_username" : "NBCNews",  
+                "amount": 1
+            }   
         ]
     }
 }
