@@ -2,20 +2,48 @@
     "reactions" : {
         "retweets": [
             {
-                "source_username" : "TheEconomist",  
-                "amount": 1
+                "source_username" : "dwnews",  
+                "amount": 3
             },
             {
-                "source_username" : "washingtonpost",  
+                "source_username" : "Forbes",  
+                "amount": 3
+            }, 
+            {
+                "source_username" : "CBSNews",  
                 "amount": 3
             }
             
         ],
         "likes":[
             {
+                "source_username" : "CNN",  
+                "amount": 5
+            }, 
+            {
+                "source_username" : "dwnews",  
+                "amount": 3
+            }, 
+            {
+                "source_username" : "Forbes",  
+                "amount": 3
+            }, 
+            {
+                "source_username" : "nytimes",  
+                "amount": 3
+            }, 
+            {
+                "source_username" : "CBSNews",  
+                "amount": 1
+            },  
+            {
                 "source_username" : "NBCNews",  
                 "amount": 1
-            }   
+            }, 
+            {
+                "source_username" : "Amazon",  
+                "amount": 1
+            }
         ]
     }
 }
