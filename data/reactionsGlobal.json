@@ -4,136 +4,531 @@
             [
                 {
                     "source_username" : "BBCWorld",  
-                    "amount": 10, 
+                    "amount": 27, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
                     "source_username" : "Forbes",  
-                    "amount": 2, 
+                    "amount": 30, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
                     "source_username" : "CNN",  
-                    "amount": 1, 
+                    "amount": 25, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
                     "source_username" : "Milenio",  
                     "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "WSJ",  
+                    "amount": 6, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 6, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 17, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ],  
            [
                 {
-                    "source_username" : "BBCWorld",  
-                    "amount": 3, 
+                    "source_username" : "CBSNews",  
+                    "amount": 5, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "Forbes",  
-                    "amount": 2, 
-                    "date" : "2021-01-10T22:42:09Z"              
-                },
-                {
-                    "source_username" : "CNN",  
+                    "source_username" : "TIME",  
                     "amount": 1, 
-                    "date" : "2021-01-10T22:42:09Z"              
-                },
-                {
-                    "source_username" : "Milenio",  
-                    "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ] , 
             [
                 {
-                    "source_username" : "BBCWorld",  
-                    "amount": 3, 
-                    "date" : "2021-01-10T22:42:09Z"              
-                },
-                {
-                    "source_username" : "Forbes",  
+                    "source_username" : "TIME",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "CNN",  
+                    "source_username" : "Vive_USA",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "Milenio",  
-                    "amount": 3, 
+                    "source_username" : "FoxNews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "cnnbrk",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "BBCWorld",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "dwnews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 5, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 6, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "cnnbrk",  
+                    "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ],
             [
                 {
                     "source_username" : "BBCWorld",  
-                    "amount": 3, 
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "WSJ",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
                     "source_username" : "nytimes",  
+                    "amount": 13, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
+            ],
+            [
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 6, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "BBCWorld",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 9, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "WSJ",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 7, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 9, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "dwnews",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "euronews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "AJEnglish",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "BBCWorld",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }   
+            ],
+            [
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 7, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "BBCWorld",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "AP",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                } 
+            ],
+            [
+                {
+                    "source_username" : "TIME",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "thetimes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 6, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+                
+            ],
+            [
+                {
+                    "source_username" : "guardian",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 4, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+                
             ]
         ] ,
         "retweets": [
             [
                 {
                     "source_username" : "BBCWorld",  
-                    "amount": 3, 
+                    "amount": 7, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
                     "source_username" : "Forbes",  
-                    "amount": 2, 
+                    "amount": 10, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
                     "source_username" : "CNN",  
+                    "amount": 5, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "WSJ",  
                     "amount": 1, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "Milenio",  
+                    "source_username" : "TIME",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ],  
            [
                 {
-                    "source_username" : "BBCWorld",  
-                    "amount": 3, 
-                    "date" : "2021-01-10T22:42:09Z"              
-                },
-                {
-                    "source_username" : "Forbes",  
+                    "source_username" : "Milenio",  
                     "amount": 2, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "CNN",  
+                    "source_username" : "TIME",  
                     "amount": 1, 
-                    "date" : "2021-01-10T22:42:09Z"              
-                },
-                {
-                    "source_username" : "Milenio",  
-                    "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
             ] , 
             [
                 {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "FoxNews",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 4, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "cnnbrk",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Vive_USA",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ] ,
+            [
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "dwnews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "CNN",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 10, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
                     "source_username" : "BBCWorld",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "Forbes",  
+                    "source_username" : "CNN",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TheEconomist",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
                     "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 6, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "WSJ",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "BBCWorld",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 4, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
@@ -142,11 +537,162 @@
                     "date" : "2021-01-10T22:42:09Z"              
                 },
                 {
-                    "source_username" : "Milenio",  
+                    "source_username" : "nytimes",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "dwnews",  
                     "amount": 3, 
                     "date" : "2021-01-10T22:42:09Z"              
                 }
-            ] 
+                
+            ],
+            [
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 4, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "WSJ",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+            ],
+            [
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CNN",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "euronews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+    
+            ],
+            [
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 3, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "BBCWorld",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "NBCNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TheEconomist",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+                
+                
+            ],
+            [
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "thetimes",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "CBSNews",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+                
+            ],
+            [
+                {
+                    "source_username" : "guardian",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Forbes",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "Milenio",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "washingtonpost",  
+                    "amount": 2, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "TIME",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                },
+                {
+                    "source_username" : "nytimes",  
+                    "amount": 1, 
+                    "date" : "2021-01-10T22:42:09Z"              
+                }
+                
+            ]
         ] 
     }
 }
