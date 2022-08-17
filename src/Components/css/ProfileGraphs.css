@@ -1,0 +1,24 @@
+.profile-graph-title{
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+
+
+.container-graph-profile-details{
+    height: 600px;
+    width: 930px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-graph-profile-footer{
+    margin-left: 4rem;
+    margin-top: 1rem;
+    margin-right: 9rem;
+    margin-bottom: 2rem;
+}

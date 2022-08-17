@@ -1,6 +1,10 @@
 import React from "react";
 
-// set the defaults
+/*
+********************************************************************************************
+  UserContext defines a user context to save user id.
+********************************************************************************************
+*/
 const UserContext = React.createContext({
   userID: "Default user",
   setUserID: () => {}

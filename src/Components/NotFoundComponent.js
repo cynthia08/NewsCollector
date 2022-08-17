@@ -1,7 +1,13 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import NotListedLocationIcon from '@material-ui/icons/NotListedLocation';
-import './NotFoundComponent.css'
+import './css/NotFoundComponent.css'
+
+/*
+********************************************************************************************
+  NotFoundComponent auxiliary component that defines to display for invalid routes.
+********************************************************************************************
+*/
 
 function NotFoundComponent() {
   return (
@@ -12,7 +18,7 @@ function NotFoundComponent() {
         <div className='text-not-found'>
             <h1>404 - Page not found </h1>
             <p>Sorry, we can't find what you are looking for.</p>
-            <Button variant="contained" color="primary" href='/'>
+            <Button variant="contained" color="primary" href='/NewsCollector/'>
                 Go back Home
             </Button>
         </div>

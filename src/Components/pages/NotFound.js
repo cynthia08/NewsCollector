@@ -3,7 +3,11 @@ import NavBarHome from '../NavBarHome';
 import NotFoundComponent from '../NotFoundComponent';
 import Footer from '../Footer'
 
-
+/*
+********************************************************************************************
+  NotFound main page.
+********************************************************************************************
+*/
 
 function NotFound() {
   return (

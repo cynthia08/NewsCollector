@@ -1,0 +1,33 @@
+{
+    "reactions" : {
+        "likes": [
+            {
+                "source_username" : "Sample1",  
+                "amount": 0
+            },
+            {
+                "source_username" : "Sample2",  
+                "amount": 0
+            },
+            {
+                "source_username" : "Sample3",  
+                "amount": 0
+            }
+        ],
+        "retweets":[
+            {
+                "source_username" : "Sample1",  
+                "amount": 0
+                    
+            },
+            {
+                "source_username" : "Sample2",  
+                "amount": 0
+            },
+            {
+                "source_username" : "Sample3",  
+                "amount": 0
+            }   
+        ]
+    }
+}

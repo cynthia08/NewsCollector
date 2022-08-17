@@ -1,14 +1,17 @@
 import React from 'react'
 import Piramid from './Piramid'
-import './Piramid.css'
-import { useContext, createContext } from 'react';
+import './css/Piramid.css'
+import { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import UserContext from "./user-context"
 import FetchService from "./services/fetchServices";
 
-
-
+/*
+********************************************************************************************
+  TopNewsProfile auxiliary component that call the main content for Top News Sources.
+********************************************************************************************
+*/
 
 function TopNewsProfile() {
     const { userID } = useContext(UserContext);
@@ -17,34 +20,34 @@ function TopNewsProfile() {
           display: 'flex',
           '& > *': {
             margin: theme.spacing(10, 'auto'),
-            width: theme.spacing(130),
-            height: theme.spacing(75),
+            width: theme.spacing(140),
+            height: "auto",
             background: "#F5F5F5",
           },
         },
+
+
       }));
 
       const classes = useStyles();
-      const url = "https://jsonplaceholder.typicode.com/users"
 
-      const { newsData, errorN, isLoadingN } = FetchService.useFetchNews(url)
-      const { userData, error, isLoading } = FetchService.useFetchUser(url)
-      console.log("here from top news ")
-      console.log(userData.total_links);
-  
+      const { userTweets, errorUserTweets, isLoadingUserTweets } = FetchService.useFetchTweetNews();
 
     return (
         <div className={classes.root}>
             <Paper elevation={2}>
                 <div className='piramid-menu-title'>
-                    <b>Top News Sources:  </b>
+                    <b>Top News Sources  </b>
                 </div>  
                 <div>
-                  <Piramid 
-                  newsData = {newsData}
-                  loading = {isLoadingN}
-                  totalLink = {userData.news_links}
-                  loading2 = {isLoading}/>
+                 
+                      <Piramid 
+                        newsData = {userTweets}
+                        loading = {isLoadingUserTweets}
+                        errorTweets = {errorUserTweets}
+                      />
+
+                 
                 </div> 
             </Paper>
         </div>

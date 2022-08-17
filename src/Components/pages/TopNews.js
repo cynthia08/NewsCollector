@@ -1,16 +1,14 @@
-import React,{ useState } from 'react'
-import Piramid from '../Piramid'
+import React from 'react'
 import NavBar from '../NavBar'
 import Footer from '../Footer'
-
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams
-  } from "react-router-dom";
+import {BrowserRouter as Router, useParams } from "react-router-dom";
 import TopNewsProfile from '../TopNewsProfile';
+
+/*
+********************************************************************************************
+  Top News Sources main page.
+********************************************************************************************
+*/
 
 function TopNews() {   
     let { id } = useParams();

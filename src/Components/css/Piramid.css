@@ -1,0 +1,84 @@
+
+
+.piramid-menu{
+    background-color: #F5F5F5;
+    height: 540px;
+    width: 1050px;
+    margin: 80px auto;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    border-radius: 9px;
+
+}
+.piramid-menu-title{
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    white-space: pre-line;
+}
+
+.container-p{
+    display: flex; 
+    flex-direction: row ;
+    margin-top: 20px;
+    margin-left: 50px;
+    align-items: flex-start;
+    max-width: auto; 
+}
+
+.container-piramid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-piramid{
+    height: 8rem; 
+}
+
+.piramid{
+    height: 7.5rem; 
+}
+
+.piramid2{
+    height: 8rem; 
+    width: 19rem;
+}
+
+.link{
+    margin-left: auto;
+}
+
+.more_options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-btn{
+    width: 9.5rem;
+}
+
+.right-btn{
+    width: 9.5rem;
+}
+
+.table-piramid{
+    margin-left: 4rem;
+    margin-right: 3rem;
+    flex: 1 0 auto;
+    width: 660px;
+}
+
+
+@media screen and (max-width: 1080px) {
+    .container-p {
+       
+    }
+
+    .table-piramid{
+        
+
+    }
+    
+  
+  }

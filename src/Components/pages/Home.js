@@ -1,8 +1,14 @@
 import React, { useState }  from 'react'
 import HomeComponent from '../HomeComponent';
 import Footer from '../Footer'
-import UserContext from "../user-context"
 import NavBarHome from '../NavBarHome';
+
+
+/*
+********************************************************************************************
+  Home main page.
+********************************************************************************************
+*/
 
 function Home() {
 

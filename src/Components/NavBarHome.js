@@ -1,16 +1,20 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
-import './NavBarHome.css'
+import './css/NavBarHome.css'
+
+/*
+********************************************************************************************
+  NavBarHome defines the content for navigation bar when user is not login.
+********************************************************************************************
+*/
 
 function NavBarHome() {
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
 
     return (
         <div>
             <nav className="navbar">
                 <div className="navbar-container">
-                    <Link to="/login" className="navbar-logo">  
+                    <Link to="/" className="navbar-logo">  
                         <i class="fa-solid fa-face-smile-upside-down"></i>
                         <i class="fas fa-dice-d20 fa-2x"/>
                         <div className="navbar-name">

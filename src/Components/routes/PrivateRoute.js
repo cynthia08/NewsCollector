@@ -2,6 +2,11 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import authService from '../services/authServices'
 
+/*
+************************************************************************************
+  PrivateRoute control the routes which can only be accessed when user is login.
+************************************************************************************
+*/
 
 const PrivateRoute = ({component: Component, ...rest}) => {
     return (

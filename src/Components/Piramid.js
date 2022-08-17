@@ -1,79 +1,43 @@
 import React from 'react'
-import './Piramid.css'
+import './css/Piramid.css'
 import Button from '@material-ui/core/Button'
-import NewsTable from './NewsTable'
 import Piramid2 from './Piramid2'
 import TopPiramid from './TopPiramid'
 import { withRouter } from "react-router-dom";
-import { useContext, createContext } from 'react';
 import UserContext from "./user-context";
 import TableEnhaced from './TableEnhaced';
 import LoadingComponent from './LoadingComponent'
 import Piramid3 from './Piramid3'
+import DonutSmallIcon from '@material-ui/icons/DonutSmall';
+import ControlPointIcon from '@material-ui/icons/ControlPoint';
+import EmptyData from './EmptyData'
+import ErrorComponent from './ErrorComponent'
+import * as helpers from './services/helpers';
+import NotEnoughInfo from './NotEnoughInfo';
 
 
+/*
+********************************************************************************************
+  Piramid defines the component elements that construct the Top News Sources page.
+********************************************************************************************
+*/
 
 function getData(newsData, total){
-    /*
-    const icons_obj1 ={
-        id : 1,
-        news_name: newsData.grouped_stats["1"].source_name,
-        percentage: ((newsData.grouped_stats["1"].num_links * 100) / total).toFixed()
-    }
 
-    const icons_obj2 ={
-        id : 2,
-        news_name: newsData.grouped_stats["2"].source_name,
-        percentage: ((newsData.grouped_stats["2"].num_links * 100) / total).toFixed(),
-        images: '/images/numero-2.png'
-    }
 
-    const icons_obj3 ={
-        id : 3,
-        news_name: newsData.grouped_stats["3"].source_name,
-        percentage: ((newsData.grouped_stats["3"].num_links * 100) / total).toFixed(),
-        images: '/images/numero-3.png'
-    }
-
-    const icons_obj4 ={
-        id : 4,
-        news_name: newsData.grouped_stats["4"].source_name,
-        percentage: ((newsData.grouped_stats["4"].num_links * 100) / total).toFixed(),
-        images: '/images/numero-4.png'
-    }
-
-    const icons_obj5 ={
-        id : 5,
-        news_name: newsData.grouped_stats["5"].source_name,
-        percentage: ((newsData.grouped_stats["5"].num_links * 100) / total).toFixed(),
-        images: '/images/numero-5.png'
-    }
-    
-    const icons_obj6 ={
-        id : 6,
-        news_name: newsData.grouped_stats["6"].source_name,
-        percentage: ((newsData.grouped_stats["6"].num_links * 100) / total).toFixed(),
-        images: '/images/numero-6.png'
-    }
-        const info_icons = [icons_obj1, icons_obj2, icons_obj3, icons_obj4, icons_obj5, icons_obj6];
-
-    */
     let reorder = [];
-    for (let i in newsData.grouped_stats){
-        if(i<=6){
+    for (let i in newsData){
+        if(i<6){
             const newObj = {
-                id: i,
-                news_name: newsData.grouped_stats[i].source_name, 
-                percentage: ((newsData.grouped_stats[i].num_links * 100) / total).toFixed(),
-                images: '/images/numero-'+i+'.png'
+                id: parseInt(i),
+                news_name: newsData[i].username.length >= 10 ? newsData[i].username.substring(0, 8) + "..." : newsData[i].username, 
+                percentage: ((newsData[i].num_links * 100) / total).toFixed(),
             };
             reorder.push(newObj);
         }else{
             break;
         }
     }
-
-    console.log('reorder',reorder);
 
     return reorder;
 }
@@ -83,6 +47,7 @@ class Piramid extends React.Component{
         super(props);
         this.handleClicks = this.handleClicks.bind(this);
         this.handleClickSrc = this.handleClickSrc.bind(this);
+        this.handleClickGraph = this.handleClickGraph.bind(this);
 
         const aux = parseInt(props.match.params.id);
         this.state = {
@@ -96,31 +61,15 @@ class Piramid extends React.Component{
         })
            
     }
-    //const icons1 = ['unaaa', 'unnnaa2'];
-    //const icons2 = ['test4', 'test5', 'test6'];
 
-    /*const icons_obj1 ={
-        id : 1,
-        news_name: 'BBC News',
-        color_fill: '#4267b2',
-        color_shadow: '#1a2947',
-        images: 'images/test1.png'
-    }
-
-    const icons_obj2 ={
-        id : 2,
-        news_name: 'CNN',
-        color_fill: '#282828',
-        color_shadow: '#1a1a1a',
-        images: ''
-    }
-    */
-    //const icons1 = [icons_obj1, icons_obj2];
-    //const icons2 = [icons_obj1, icons_obj2, icons_obj1];
    
     handleClickSrc(){
-        this.props.history.push("/all-sources")
+        this.props.history.push("/all-sources");
 
+    }
+
+    handleClickGraph(){
+        this.props.history.push("/news_stats");
     }
 
     render(){
@@ -130,21 +79,34 @@ class Piramid extends React.Component{
         const isLoading2 = this.props.loading2;
         
 
-        if (isLoading === true || isLoading2 === true){
+        if (isLoading || isLoading2 ){
             return <LoadingComponent/>
 
         }else{
-            icons = getData(this.props.newsData, this.props.totalLink); 
-            tableDataSelect = this.props.newsData.grouped_stats[this.state.id];
+            const aux = helpers.groupAuthors(this.props.newsData).sort(helpers.orderById('num_links', 'desc'));
+
+            if(this.props.errorTweets.includes("Error:")){
+                return <ErrorComponent/>
+            } else if (this.props.newsData.length === 0){
+                return <EmptyData/>
+            } else if (aux.length < 3){
+                return <NotEnoughInfo/>
+            }else{
+                const userTURLs = helpers.groupAuthorsURLs(this.props.newsData).sort(helpers.orderById('num_links', 'desc'));
+
+                icons = getData(userTURLs, this.props.newsData.length); 
+                tableDataSelect = userTURLs[this.state.id];
+               
+            }
+           
         }
         const icons1 = icons[0];
         const icons2 = icons.slice(1,3);
         const icons3 = icons.slice(3);
-        console.log("length", Object.keys(this.props.newsData.grouped_stats).length);
 
         return ( 
             <div>
-            <div  className='container'>       
+            <div  className='container-p'>       
                 <div className='container-piramid'>
                     <div className='top-piramid'>
                         <TopPiramid icons={icons1}
@@ -155,31 +117,37 @@ class Piramid extends React.Component{
                         onButtonChange={this.handleClicks}/>
                     </div>
                     <div className='piramid2'>
-                        { Object.keys(this.props.newsData.grouped_stats).length>3 ? 
+                        { helpers.groupAuthors(this.props.newsData).sort(helpers.orderById('num_links', 'desc')).length>3 ? 
                             <Piramid3 icons ={icons3} 
                             onButtonChange={this.handleClicks}/>
                         
                         : null
                         }
                     </div>
-                    
-                    <div className='link'>
-                        { Object.keys(this.props.newsData.grouped_stats).length>6 ? 
-
-                        <Button href="" size="small" color="primary" style={{textTransform: 'none'}}  onClick={this.handleClickSrc}>
-                            See all sources
+                    <div className='more_options'>
+                        <div className='left-btn'>
+                        <Button color="primary" size="small" style={{textTransform: 'none'}} startIcon={<DonutSmallIcon />} onClick={this.handleClickGraph}>
+                            Graph View 
+                        </Button>
+                        </div>
+                        <div className='right-btn'>
+                        { Object.keys(this.props.newsData).length>6 ? 
+                        <Button size="small" color="primary" style={{textTransform: 'none'}}  endIcon= {<ControlPointIcon/>} onClick={this.handleClickSrc}>
+                            See All Sources
                         </Button> 
                         : null
                         }
+                        </div>
                     </div>
                     
                 </div>
-                <div className='table' >
-                    { /*
-                    <NewsTable id_news={this.state.id}></NewsTable>
-                    */ }
+                <div className='table-piramid' >
+
                     <TableEnhaced id_news={this.state.id} tableData={tableDataSelect} totalLinks={this.props.totalLink}/>
+                    
+                
                 </div>
+                
                 
             </div>
                

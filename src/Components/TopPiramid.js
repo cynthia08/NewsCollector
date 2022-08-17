@@ -2,18 +2,22 @@ import React from 'react'
 import { Hexagon } from 'tiled-hexagons'
 import { withRouter } from "react-router-dom";
 
+/*
+********************************************************************************************
+  TopPiramid component that creates top section of pyramid icons in Top News Sources.
+********************************************************************************************
+*/
+
 class TopPiramid extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             size: this.props.icons
         }
-      }
-
-      
+      }  
 
       getId(){
-        console.log('clicked' + this.state.size.id);
+       
         this.props.onButtonChange(this.state.size.id);
         this.props.history.push(`/topnews/${this.state.size.id}`); 
       }
@@ -37,15 +41,14 @@ class TopPiramid extends React.Component {
 
         let x = this.state.size;
         let textI = x.news_name  +'\n'+ x.percentage +'%';
-        console.log(textI);
         return (
           <Hexagon
             sideLength={70}
             text={textI}
             textStyle={textStyle}
             onClick={this.getId.bind(this)}
-            fill = "#B0D7F1"
-            shadow= {"#"+ darken('B0D7F1', 25)}
+            fill = "#85DDFF"
+            shadow= {"#"+ darken('85DDFF', 25)}
           />
         )
     }

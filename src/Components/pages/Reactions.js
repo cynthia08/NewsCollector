@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 import AllReactions from '../AllReactions'
 import Footer from '../Footer'
 
+/*
+********************************************************************************************
+  All reactions view main page.
+********************************************************************************************
+*/
 
 function Reactions() {
 

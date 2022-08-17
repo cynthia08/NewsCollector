@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,8 +15,21 @@ import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import {FaRetweet} from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import Avatar from '@material-ui/core/Avatar';
+import CardHeader from '@material-ui/core/CardHeader';
+import * as helpers from './services/helpers';
+import Link from '@material-ui/core/Link';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import authService from './services/authServices';
+import DialogFileUpload from './DialogFileUpload';
+import './css/AllReactions.css';
 
-import './AllReactions.css';
+/*
+********************************************************************************************
+  AllReactions established the content for the AllReactions page.
+********************************************************************************************
+*/
+
 
 const COLORS =['#CB2424', '#8B0B0B', '#038CED', '#3ABEC7', '#ACACAC', '#3B8820', '#eab27c',
 '#550711', '#f41c11', '#a91bc1', '#eb80bc', '#75e7b4', '#a3fbc1', '#eb6381', '#5ea2ff',
@@ -38,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
           margin: theme.spacing(10, 'auto'),
           width: theme.spacing(110),
-          height: theme.spacing(75),
+          height: 'auto',
           background: "#F5F5F5",
         },
     },
@@ -49,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 20,
     },
     container: {
-        maxHeight: 430,
+        maxHeight: 450,
         maxWidth: 800  
     },
     table: {
@@ -66,38 +79,53 @@ const useStyles = makeStyles((theme) => ({
       top: 20,
       width: 1,
     },
+    news_title:{
+        maxHeight: 44,
+      },
+    breadcrumbs:{
+        fontSize: 14
+    }
   }));
 
-  function getData(newsData, news_links){   
-      let reGroupedStats = [];
-      for (let i in newsData.grouped_stats){
-        const newObj = {};
-        newObj.name = newsData.grouped_stats[i].source_name;
-        newObj.urls = newsData.grouped_stats[i].num_links;
-        newObj.percentage = (newsData.grouped_stats[i].num_links*100/news_links).toFixed();
-        reGroupedStats.push(newObj);
+  function getData(data, selectedOption){   
+
+      if(selectedOption === 'Likes'){
+        return data.reactions.likes.sort(helpers.orderById('amount','desc'));
+      }else{
+        return data.reactions.retweets.sort(helpers.orderById('amount','desc'));
       }
-      
-      const data = [reGroupedStats, newsData.all_stats.urls];
   
-      return data;
   }
 
 function AllReactions() {
     const classes = useStyles();
-    const url = "https://jsonplaceholder.typicode.com/users";
+    const [showSettings, setShowSettings] = useState(false);
+    const { reactionsP, errorRP, isLoadingRP } = FetchService.useFetchReactionsP();
+    const [showWarningFile, setShowWarningFile] = useState(false);
 
-    const { newsData, errorN, isLoadingN } = FetchService.useFetchNews(url);
-
-    const { userData, error, isLoading } = FetchService.useFetchUser(url);
-    
-
-    
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const location = useLocation();
     const [selectedOption, setSelectedOption] = React.useState(location.state===undefined || location.state.selector === -10   ? "Likes" : "Retweets");
     const open = Boolean(anchorEl);
+
+    const handleCloseUser = (event, reason) => {
+    
+        //if(reason !== "backdropClick" && authService.isFileLoadedJSON(0)){
+            setShowSettings(false);
+        //}
+    
+    };
+    const handleCloseWarning = (event, reason) => {
+        setShowWarningFile(false);
+    };
+
+    useEffect(() => {
+        if(authService.isFileLoadedJSON(0)===null){
+            setShowWarningFile(true);
+        }
+        
+    }, [authService.getJSONData(0)])
 
     const options = [
         'Likes',
@@ -113,7 +141,6 @@ function AllReactions() {
     const handleClose = (event) => {
         setAnchorEl(null);
         const {myValue} = event.currentTarget.dataset;
-        console.log(myValue);
 
         if (myValue !== undefined){
             setSelectedOption(myValue);
@@ -122,23 +149,34 @@ function AllReactions() {
 
     let info = [];
 
-    if (isLoading === true || isLoadingN === true ){
+    if (isLoadingRP  ){
         return <h1>Loading data...</h1>
     }else {
-        info = getData(newsData, userData.news_links);
+
+        info = getData(authService.isFileLoadedJSON(0) ? authService.getJSONData(0) :reactionsP, selectedOption);
+
     }
 
-    if(info[0].length>COLORS.length){
+    if(info.length>COLORS.length){
         const number = info[0].length - COLORS.length;
         COLORS.push(...COLORS.slice(0, number));
   
       }
 
   return (
+      <div>
    <div className={classes.root}>  
         <Paper elevation={2}>
             <div className='allreactions-menu-title'>
                 <b>All Reactions </b>
+                <Breadcrumbs aria-label="breadcrumb" className={classes.breadcrumbs}>
+                  <Link color="inherit" href='/NewsCollector/profile'>
+                    Your Profile Results
+                  </Link>
+                  <Link  color="textPrimary"  aria-current="page">
+                    All Reactions
+                  </Link>
+                </Breadcrumbs>
             </div>   
             <div className='all-reactions-container'>
                 <div className='table-src'>
@@ -165,18 +203,29 @@ function AllReactions() {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                            {info[0].map((row, index) => (
-                                <TableRow key={index}>
+                            {info.map((row, index) => (
+                                <TableRow key={index} >
                                     <TableCell component="th" scope="row">
                                         {index+1}
+                                       
                                     </TableCell>
                                     <TableCell component="th" scope="row">
-                                        <i class="fas fa-circle" style={{color:COLORS[index]}}></i>&nbsp;  
-                                        {row.name}
+                                        <CardHeader
+                                            className={classes.news_title}
+                                            avatar={
+                                            <Avatar
+                                                alt="avatar_row"
+                                                src={ helpers.imageLookup(row.source_username) ? '/NewsCollector/images/logos/'+row.source_username.toLowerCase()+'.png': '/NewsCollector/images/logos/news_default.png'}
+                                            />
+                                            }
+                                            title={row.source_username}
+                                            
+                                        />
+                                      
                                     </TableCell>
                                     <TableCell align="right">
                                         <i class="far fa-heart"></i>&nbsp;
-                                        {row.urls - 40} 
+                                        {row.amount} 
                                     </TableCell>
                                   
                                 </TableRow>
@@ -207,18 +256,27 @@ function AllReactions() {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                            {info[0].map((row, index) => (
+                            {info.map((row, index) => (
                                 <TableRow key={index}>
                                     <TableCell component="th" scope="row">
                                         {index+1}
                                     </TableCell>
                                     <TableCell component="th" scope="row">
-                                        <i class="fas fa-circle" style={{color:COLORS[index]}}></i>&nbsp;  
-                                        {row.name}
+                                        <CardHeader
+                                            className={classes.news_title}
+                                            avatar={
+                                            <Avatar
+                                                alt="avatar_row"
+                                                src={ helpers.imageLookup(row.source_username) ? '/NewsCollector/images/logos/'+row.source_username.toLowerCase()+'.png': '/NewsCollector/images/logos/news_default.png'}
+                                            />
+                                            }
+                                            title={row.source_username}
+                                            
+                                        />
                                     </TableCell>
                                     <TableCell align="right">
                                         <FaRetweet/> &nbsp; 
-                                        {row.urls - 40} 
+                                        {row.amount} 
                                     </TableCell>
                                   
                                 </TableRow>
@@ -266,6 +324,14 @@ function AllReactions() {
             
         </Paper>     
     </div>
+    <DialogFileUpload
+        setShowSettings = {setShowSettings}
+        setShowWarningFile = {setShowWarningFile}
+        c_open = {showSettings}
+        close = {handleCloseUser} >
+    </DialogFileUpload>
+   
+</div>
   )
 }
 

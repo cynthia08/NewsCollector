@@ -3,7 +3,11 @@ import ComparisonView from '../ComparisonView'
 import NavBar from '../NavBar'
 import Footer from '../Footer'
 
-
+/*
+********************************************************************************************
+  Global Stats main page.
+********************************************************************************************
+*/
 
 function Comparison() {
     return (

@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import Profile from './Components/pages/Profile'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import TopNews from './Components/pages/TopNews';
@@ -16,6 +16,14 @@ import Register from './Components/pages/Register';
 import PublicRoute from './Components/routes/PublicRoute';
 import PrivateRoute from './Components/routes/PrivateRoute';
 import Reactions from './Components/pages/Reactions';
+import ProfileDetails from './Components/pages/ProfileDetails';
+import GraphView from './Components/pages/GraphView';
+
+/*
+********************************************************************************************
+  App main page, defines the content of the application with the corresponding components.
+********************************************************************************************
+*/
 
 function App() {
   const [userID, setUserID] = useState("1");
@@ -34,32 +42,19 @@ function App() {
     <ThemeProvider theme={theme}>
       <div>
         <UserContext.Provider value={value}>
-          <Router>
+          <Router basename='/NewsCollector'>
               <Switch>
                   <PublicRoute restricted={false} path='/' exact component={Home} />
                   <PublicRoute restricted={false} path='/register' exact component={Register} />
                   <PrivateRoute path='/profile' exact component={Profile} />
+                  <PrivateRoute path='/profile/details' exact component={ProfileDetails} />
                   <PrivateRoute path='/topnews/:id' exact component={TopNews} />
                   <PrivateRoute path='/about' exact component={About} />
                   <PrivateRoute path='/all-sources' exact component={Sources} />
                   <PrivateRoute path='/comparison' exact component={Comparison} />
                   <PrivateRoute path='/reactions' exact component={Reactions} />
+                  <PrivateRoute path='/news_stats' exact component={GraphView} />
                   <PublicRoute component={NotFound} path="*" />
-
-
-                {
-                  /*
-                  <Route path='/login' exact component={Home} />
-                  <Route path='/profile' exact component={Profile} />
-                  <Route path='/topnews/:id' exact component={TopNews} />
-                  <Route path='/about' exact component={About} />
-                  <Route path='/all-sources' exact component={Sources} />
-                  <Route path='/comparison' exact component={Comparison} />
-                  <Route path='/register' exact component={Register} />
-                  */
-                }
-
-               
             </Switch>
           </Router>
         </UserContext.Provider>

@@ -2,8 +2,13 @@ import React from 'react'
 import { TiledHexagons } from 'tiled-hexagons'
 import { withRouter } from "react-router-dom";
 
+/*
+********************************************************************************************
+  Piramid3 component that creates third section of pyramid icons in Top News Sources.
+********************************************************************************************
+*/
 
-class Piramid2 extends React.Component {
+class Piramid3 extends React.Component {
     constructor(props) {
         super(props);
 
@@ -13,14 +18,12 @@ class Piramid2 extends React.Component {
     }
 
     getId(i){
-        console.log('clicked' + i);
         this.props.onButtonChange(i);
         this.props.history.push(`/topnews/${i}`); 
       }
 
     render() {
         let x = this.state.size;
-        console.log("size", x);
         //let textI = x.news_name  + x.percentage +'%';
         const darken = (hexString, amount) => {
             return hexString
@@ -38,7 +41,6 @@ class Piramid2 extends React.Component {
         });
 
         if(x.length===2){    
-          console.log('flag im in x length 2')        
             return (
                 <TiledHexagons
                 maxHorizontal={x.length}
@@ -52,8 +54,8 @@ class Piramid2 extends React.Component {
                 tileBorderRadii={9}
                 tiles={x.map((i, index) => {
                     return { 
-                            fill: "#B0D7F1", 
-                            shadow: "#" + darken("B0D7F1",25),
+                            fill: "#85DDFF", 
+                            shadow: "#" + darken("85DDFF",25),
                             text: `${i.news_name  +'\n'+ i.percentage +'%'}`,
                             onClick: () => this.getId(i.id)
                     }
@@ -75,8 +77,8 @@ class Piramid2 extends React.Component {
                     tileBorderRadii={9}
                     tiles={x.map((i, index) => {
                         return { 
-                                fill: "#B0D7F1",
-                                shadow: "#" + darken("B0D7F1",25),
+                                fill: "#85DDFF",
+                                shadow: "#" + darken("85DDFF",25),
                                 text: `${i.news_name  +'\n'+ i.percentage +'%'}`,
                                 onClick: () => this.getId(i.id)
                         }
@@ -90,5 +92,5 @@ class Piramid2 extends React.Component {
 
 }
 
-export default withRouter(Piramid2);
+export default withRouter(Piramid3);
 

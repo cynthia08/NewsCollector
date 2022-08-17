@@ -1,24 +1,26 @@
 import React from 'react';
 import { TiledHexagons } from 'tiled-hexagons'
 import { withRouter } from "react-router-dom";
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import SettingsIcon from '@material-ui/icons/Settings';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import './NewProfileMosaics.css'
+import './css/NewProfileMosaics.css'
 import LoadingComponent from './LoadingComponent';
-import DialogComponent from './DialogComponent';
+import * as helpers from './services/helpers';
+import ErrorComponent from './ErrorComponent';
+import EmptyData from './EmptyData';
+import authService from './services/authServices';
+import NotEnoughInfo from './NotEnoughInfo';
 
-function arrangeData(glArray, dataNews, imas_new, optionSelect){
+
+/*
+********************************************************************************************
+  NewProfileMosaics defines and arranges the mosaics in Profile Results.
+********************************************************************************************
+*/
+
+function arrangeData(userTweets, userReactions, optionSelect){
   
     const darken = (hexString, amount) => {
         return hexString
@@ -30,44 +32,123 @@ function arrangeData(glArray, dataNews, imas_new, optionSelect){
     }
 
     let selectData = [];
-    let selectImages =[];
+    let newSelectData = [];
     let selectColor ;
     let colors = ['3C85DE', '4EC6F5', '3CDBDE' ];
     let reactionsId;
-    console.log(imas_new);
 
-    if(optionSelect==='Most Liked Tweets'){
-        selectData = ['CNN', 'euronews','BBC'];
-        selectImages = [
-            imas_new[3] !== undefined ? imas_new[3].media_content : 'images/user.svg',
-            imas_new[4] !== undefined ? imas_new[4].media_content : 'images/user.svg',
-            imas_new[5] !== undefined ? imas_new[5].media_content : 'images/user.svg'
-        ];
-        selectColor = 0;
-        reactionsId = -10;
+    
 
-    } else if(optionSelect==='Most Retweet Tweets'){
-        selectData = ['BBC', 'CNN','The Post'];
-        selectImages = [
-            imas_new[6] !== undefined ? imas_new[6].media_content : 'images/user.svg',
-            imas_new[7] !== undefined ? imas_new[7].media_content : 'images/user.svg',
-            imas_new[8] !== undefined ? imas_new[8].media_content : 'images/user.svg'
-        ];
-        selectColor = 1;
-        reactionsId = -20;
+    if(userReactions.length !== 0){
+        if(optionSelect==='Most Liked Tweets'){
+        
+            newSelectData =  userReactions.reactions.likes.sort(helpers.orderById('amount', 'desc'))
+            if(newSelectData.length >= 3){
+                const slicedArray = newSelectData.slice(0, 3);
+                selectData = slicedArray;
+                selectColor = 0;
+                reactionsId = -10;
+
+            }else{
+                const aux1 = {
+                    source_username : "Sample1",  
+                    amount: 0
+                }
+                const aux2 = {
+                    source_username : "Sample2",  
+                    amount: 0
+                }
+                if(newSelectData.length == 1){
+                    newSelectData.push(aux1);
+                    newSelectData.push(aux2);
+                }else{
+                    newSelectData.push(aux1);
+                    
+                }
+                selectData = newSelectData;
+                selectColor = 0;
+                reactionsId = -10;
+            }
+           
+        } else if(optionSelect==='Most Retweet Tweets'){
+    
+            newSelectData =  userReactions.reactions.retweets.sort(helpers.orderById('amount', 'desc'))
+            if(newSelectData.length >= 3){
+                const slicedArray = newSelectData.slice(0, 3);
+                selectData = slicedArray;
+                selectColor = 1;
+                reactionsId = -20;
+            }else{
+                const aux1 = {
+                    source_username : "Sample1",  
+                    amount: 0
+                }
+                const aux2 = {
+                    source_username : "Sample2",  
+                    amount: 0
+                }
+                if(newSelectData.length == 1){
+                    newSelectData.push(aux1);
+                    newSelectData.push(aux2);
+                }else{
+                    newSelectData.push(aux1);
+                    
+                }
+                selectData = newSelectData;
+                selectColor = 1;
+                reactionsId = -20;
+            }
+    
+        }
 
     }
+    
 
-    //text
-    const iconsText1 = ['', dataNews[0], selectData[0], ''];
-    const iconsText2 = ['', dataNews[1],'', selectData[1], ''];
-    const iconsText3 = ['', dataNews[2], selectData[2], ''];
+    // Arrange data for icons
+    let {iconsText1,iconsText2, iconsText3 } =[];
+    let {iconsImage1, iconsImage2, iconsImage3} = [];
 
-    //images 
-    const iconsImage1 = [imas_new[0] !== undefined ? imas_new[0].media_content : 'images/user.svg', '', '', selectImages[0]];
-    const iconsImage2 = [imas_new[1] !== undefined ? imas_new[1].media_content : 'images/user.svg', '','images/user.svg', '', selectImages[1]];
-    const iconsImage3 = [imas_new[2] !== undefined ? imas_new[2].media_content : 'images/user.svg', '', '', selectImages[2]];
+    const dataNews =  [ 
+        userTweets.length !== 0 ? helpers.groupAuthors(userTweets).sort(helpers.orderById('num_links', 'desc'))[0].username : "", 
+        userTweets.length !== 0 ? helpers.groupAuthors(userTweets).sort(helpers.orderById('num_links', 'desc'))[1].username : "",
+        userTweets.length !== 0 ? helpers.groupAuthors(userTweets).sort(helpers.orderById('num_links', 'desc'))[2].username : ""
+        ];
+    
 
+    if(userTweets.length === 0 && userReactions.length === null){
+        //text default
+        iconsText1 = ['', '1.', '1.', ''];
+        iconsText2 = ['',  '2.','', '2.', ''];
+        iconsText3 = ['',  '2.', '3.', ''];
+
+        //image default
+        const imageDefault = '/NewsCollector/images/logos/news_default.png'
+        iconsImage1 = [imageDefault, '', '', imageDefault];
+        iconsImage2 = [imageDefault, '','/NewsCollector/images/user2.png', '', imageDefault];
+        iconsImage3 = [imageDefault, '', '', imageDefault];
+
+    }else{
+        //text
+        
+        iconsText1 = ['', 
+            dataNews[0].length > 8 ? dataNews[0].substring(0, 8) + "..." : dataNews[0], 
+            selectData[0].source_username.length > 8 ? selectData[0].source_username.substring(0, 8) + "..." : selectData[0].source_username, 
+            ''];
+        iconsText2 = ['', 
+            dataNews[1].length > 8 ? dataNews[1].substring(0, 8) + "..." : dataNews[1],'', 
+            selectData[1].source_username.length > 8 ? selectData[1].source_username.substring(0, 8) + "..." : selectData[1].source_username, 
+            ''];
+        iconsText3 = ['', 
+            dataNews[2].length > 8 ? dataNews[2].substring(0, 8) + "..." : dataNews[2], 
+            selectData[2].source_username.length > 8 ? selectData[2].source_username.substring(0, 8) + "..." : selectData[2].source_username, 
+            ''];
+
+        //images 
+        iconsImage1 = [helpers.imageLookup(dataNews[0].toLowerCase()) ? '/NewsCollector/images/logos/'+dataNews[0].toLowerCase()+'.png' : '/NewsCollector/images/logos/news_default.png', '', '', helpers.imageLookup(selectData[0].source_username.toLowerCase()) ? '/NewsCollector/images/logos/'+selectData[0].source_username.toLowerCase()+'.png' : '/NewsCollector/images/logos/news_default.png'];
+        iconsImage2 = [helpers.imageLookup(dataNews[1].toLowerCase()) ? '/NewsCollector/images/logos/'+dataNews[1].toLowerCase()+'.png' : '/NewsCollector/images/logos/news_default.png', '','/NewsCollector/images/account.png', '', helpers.imageLookup(selectData[1].source_username.toLowerCase()) ? '/NewsCollector/images/logos/'+selectData[1].source_username.toLowerCase()+'.png' : '/NewsCollector/images/logos/news_default.png'];
+        iconsImage3 = [helpers.imageLookup(dataNews[2].toLowerCase()) ? '/NewsCollector/images/logos/'+dataNews[2].toLowerCase()+'.png' : '/NewsCollector/images/logos/news_default.png', '', '', helpers.imageLookup(selectData[2].source_username.toLowerCase()) ? '/NewsCollector/images/logos/'+selectData[2].source_username.toLowerCase()+'.png' : '/NewsCollector/images/logos/news_default.png'];
+    }
+    
     //color fills
     const iconsFill1 = ['#FFFFFF', '#3E9CC2', '#'+colors[selectColor], '#FFFFFF'];
     const iconsFill2 = ['#FFFFFF', '#3E9CC2','#FFFFFF', '#'+colors[selectColor], '#FFFFFF'];
@@ -79,13 +160,12 @@ function arrangeData(glArray, dataNews, imas_new, optionSelect){
     const iconsShadow3 = ['#B2B2B2', '#'+darken('3E9CC2', 25), '#'+darken(colors[selectColor], 25), '#B2B2B2'];
 
     //ids
-    const iconsId1 = [-1, 1, reactionsId, -1];
-    const iconsId2 = [-1, 2,0, reactionsId, -1];
-    const iconsId3 = [-1, 3, reactionsId, -1];
+    const iconsId1 = [dataNews[0], 1, reactionsId, selectData[0].source_username];
+    const iconsId2 = [dataNews[1], 2,0, reactionsId, selectData[1].source_username];
+    const iconsId3 = [dataNews[2], 3, reactionsId, selectData[2].source_username];
 
     
-    // Create obj array
-
+    // Create obj for buttons
     const objArray1 = [];
 
     for(let i=0; i<iconsId1.length; i++){
@@ -137,105 +217,6 @@ function arrangeData(glArray, dataNews, imas_new, optionSelect){
 
 }
 
-
-// from services API, now temporarly is static
-function getData(n, optionSelect, newsSrcTop, isLoading){
-
-    //get global array from service API
-
-    //number of links from user
-    const glLength = n;
-    var glArray = [];
-    var newImages;
-    /*
-    const images = [
-        'images/ima0.png',
-        'images/ima1.png',
-        'images/ima2.png',
-        'images/ima3.png',
-        'images/ima4.png',
-        'images/ima5.png',
-        'images/ima6.png',
-        'images/ima1.png',
-        'images/ima2.png',
-        'images/ima3.png',
-        'images/ima4.png',
-        'images/ima5.png',
-        'images/ima6.png',
-        'images/ima1.png',
-        'images/ima2.png',
-        'images/ima3.png',
-        'images/ima4.png',
-        'images/ima5.png',
-        'images/ima6.png',
-        'images/ima1.png',
-        'images/ima2.png',
-        'images/ima3.png',
-        'images/ima4.png',
-        'images/ima5.png',
-        'images/ima6.png'
-    ];  
-    
-    // boundaries of size mosaic
-    if(glLength <20){
-        glArray = new Array(11);
-        newImages= images.slice(0,glArray.length-4);
-     
-     
-    } else if(glLength >=20 && glLength <40){
-        glArray = new Array(17);
-        newImages= images.slice(0,glArray.length-4);
-
-       
-    } else{
-        glArray = new Array(23);
-        newImages= images.slice(0,glArray.length-4);
-
-    }    
-    */
-    //console.log(newsSrcTop.grouped_stats);
-    //let news = ["1", "2", "3"];
-    
-    
-    const news = [newsSrcTop.grouped_stats["1"].source_name, 
-                 newsSrcTop.grouped_stats["2"].source_name, 
-                 newsSrcTop.grouped_stats["3"].source_name];
-
-    const imas_new =[];
-
-    // ORDER HERE IMP not change
-    const sorted_1 = (newsSrcTop.grouped_stats["1"].urls).sort((a,b) => (b.no_likes+b.no_retweets) - (a.no_likes+a.no_retweets));
-    const sorted_2 = (newsSrcTop.grouped_stats["2"].urls).sort((a,b) => (b.no_likes+b.no_retweets) - (a.no_likes+a.no_retweets));
-    const sorted_3 = (newsSrcTop.grouped_stats["3"].urls).sort((a,b) => (b.no_likes+b.no_retweets) - (a.no_likes+a.no_retweets));
-    
-    imas_new.push(sorted_1.find (i => i.media_content !==''));
-    imas_new.push(sorted_2.find (i => i.media_content !=='' ));
-    imas_new.push(sorted_3.find (i => i.media_content !=='' ));
-
-    const sorted_4 = (newsSrcTop.grouped_stats["1"].urls).sort((a,b) => b.no_likes - a.no_likes);
-    const sorted_5 = (newsSrcTop.grouped_stats["2"].urls).sort((a,b) => b.no_likes - a.no_likes);
-    const sorted_6 = (newsSrcTop.grouped_stats["3"].urls).sort((a,b) => b.no_likes - a.no_likes);
-
-    imas_new.push(sorted_4.find (i => i.media_content !==''));
-    imas_new.push(sorted_5.find (i => i.media_content !=='' ));
-    imas_new.push(sorted_6.find (i => i.media_content !=='' ));
-
-   
-    const sorted_7 = (newsSrcTop.grouped_stats["1"].urls).sort((a,b) => b.no_retweets - a.no_retweets);
-    const sorted_8 = (newsSrcTop.grouped_stats["2"].urls).sort((a,b) => b.no_retweets - a.no_retweets);
-    const sorted_9 = (newsSrcTop.grouped_stats["3"].urls).sort((a,b) => b.no_retweets - a.no_retweets);    
-     
-    imas_new.push(sorted_7.find (i => i.media_content !==''));
-    imas_new.push(sorted_8.find (i => i.media_content !=='' ));
-    imas_new.push(sorted_9.find (i => i.media_content !=='' ));
-       
-    const dataMosaic = arrangeData(glArray, news, imas_new, optionSelect);
-
-    return dataMosaic;
-}
-
-
-
 class NewProfileMosaics extends React.Component{
     constructor(props) {
         super(props);
@@ -244,28 +225,25 @@ class NewProfileMosaics extends React.Component{
         this.handleClose = this.handleClose.bind(this);
         this.handleCloseUser = this.handleCloseUser.bind(this);
         this.state = {
-            //sizeMenu: this.props.length,
             sizeMenu: 10,
             showUser: false,
             anchorEl: null,
-            optionSelect: 'Most Liked Tweets'
+            optionSelect: 'Most Liked Tweets',
         }
     }
 
     navigate = (id) => {
-        console.log('clicked mosaics' + id);
-        //history.push("/topnews");
         if(id===0){
-            this.setState({showUser:true});
-        }else if(id==-10 || id==-20){
+            this.props.history.push(`/profile/details`);
+        }else if(id===-10 || id===-20){
             this.props.history.push({
                 pathname: '/reactions',
                 state: { selector: id }
             });
-        }else if(id!==-1){
-            this.props.history.push(`/topnews/${id}`);
+        }else if(id===1 ||id===2 || id===3  ){
+            this.props.history.push(`/topnews/${id-1}`);
         }else{
-            window.open("https://www.twitter.com", "_blank") //to open new page
+            window.open("https://www.twitter.com/" +id, "_blank") //to open new page
 
         }
     };
@@ -303,20 +281,33 @@ class NewProfileMosaics extends React.Component{
        
         const ITEM_HEIGHT = 48;
 
-        const open = Boolean(this.state.anchorEl);
-        const newsSrcTop = this.props.newsSrc;
-        const isLoading = this.props.loading;
+        const open = Boolean(this.state.anchorEl);       
+
         let data =[];
-        const flagTemp = true
-        if (isLoading === true){
+        
+        if (this.props.loadingU || this.props.loadingAllN ){
+            this.props.setShowSettings(false);
             return <LoadingComponent/>
 
         }else{
-            data = getData(this.state.sizeMenu, this.state.optionSelect, newsSrcTop); //static
+            //this.props.setShowSettings(true);
+            const aux = helpers.groupAuthors(this.props.newsSrc).sort(helpers.orderById('num_links', 'desc'));
+            if(this.props.errorTweets.includes("Error:") || this.props.errorReact.includes("Error:")){
+                this.props.setShowSettings(false);
+                return <ErrorComponent/>
+            } else if (this.props.newsSrc.length === 0){
+                this.props.setShowSettings(false);
+                return <EmptyData/>
+            } else if (aux.length < 3){
+                this.props.setShowSettings(false);
+                return <NotEnoughInfo/>
+            }else{
+                let newReactions = this.props.reactions;
+                data = arrangeData(this.props.newsSrc, newReactions, this.state.optionSelect); //static
+            }
         }
         
 
-        let length = this.props.length;
         let colorSelect;
 
         if(this.state.optionSelect==='Most Liked Tweets'){
@@ -408,16 +399,6 @@ class NewProfileMosaics extends React.Component{
                             />
 
                 </div>
-               
-                <DialogComponent
-                    c_open = {this.state.showUser}
-                    username = {this.props.user.name} 
-                    date_c = {this.props.user.date_created}
-                    close = {this.handleCloseUser} >
-
-                </DialogComponent>
-            
-                
                 <div className="subcontainer">
                     <div> 
                         <i class="fas fa-circle" style={{color:'#3E9CC2'}}></i> &nbsp; 
@@ -463,6 +444,7 @@ class NewProfileMosaics extends React.Component{
                 </Menu>
 
             </div>
+
             
             
             

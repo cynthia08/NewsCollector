@@ -1,0 +1,26 @@
+.container-cards{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+.container-graph{
+    height: 550px;
+    width: 710px;
+    margin-top: -30px;
+}
+
+.graph-details{
+   margin-left: 4rem;
+   margin-top: 1rem;
+   margin-right: 9rem;
+   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 820px) {
+    .container-graph{
+        width: 490px;
+    }
+
+}
